@@ -1,5 +1,6 @@
 ---
 title: "DAT301 Midterm Project"
+author: "Amber Kahklen, Shaira Alam, Alyssa Stefencavage"
 output: ioslides_presentation
 ---
 
