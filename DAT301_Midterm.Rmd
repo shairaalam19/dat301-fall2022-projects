@@ -6,7 +6,7 @@ output: ioslides_presentation
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 df = read.csv("/Users/amber/Downloads/adultdata.csv") #you will have to change this to your directory when working on it
-colnames(df) <-c("age", "workclass", "fnlwgt", "education", "education-num", "marital-Status", "occupation", "relationship", "race", "sex", "capital-gain", "capital-loss", "hours-per-week", "native-country")
+colnames(df) <-c("age", "workclass", "fnlwgt", "education", "education-num", "marital-Status", "occupation", "relationship", "race", "sex", "capital-gain", "capital-loss", "hours-per-week", "native-country", "wage_below_orAbove_50k")
 
 ```
 
