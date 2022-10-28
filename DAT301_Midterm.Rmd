@@ -14,7 +14,10 @@ library(ggplot2)
 ```
 ## Income Prediction | Based on Census Data
 
-Example
+UCI's Machine Learning Repository, Adult Data Set: https://archive.ics.uci.edu/ml/datasets/Adult
+
+- Predicts if income is above or below $50,000 based on census data
+
 
 ## Categories of Adult Income Data
 
