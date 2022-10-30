@@ -63,6 +63,22 @@ knitr::include_graphics('./male-female-money.png')
 **native-country**: United-States, Cambodia, England, Puerto-Rico, Canada, Germany, 
                   Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran,                       Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal,                         Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia,                      Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador,                       Trinadad&Tobago, Peru, Hong, Holand-Netherlands.</font>
 
+## Motivation
+
+Help us in our own careers.
+
+See historically what attributes people have to increase wage.
+```{r,out.width='300px',out.height='170px',echo=FALSE,fig.align='left'}
+
+knitr::include_graphics('./grad.png')
+```
+```{r,out.width='300px',out.height='200px',echo=FALSE,fig.align='right'}
+
+knitr::include_graphics('./family.png')
+```
+
+## Challenges
+
 ## 1. Plot the count for each education level.  
 
 ```{r}
