@@ -11,6 +11,7 @@ colnames(df) <-c("age", "workclass", "fnlwgt", "education", "education-num", "ma
 library(ggplot2movies)
 library(dplyr)
 library(ggplot2)
+adultData <- data.frame(df)
 ```
 ## Income Prediction | Based on Census Data
 
@@ -55,20 +56,57 @@ UCI's Machine Learning Repository, Adult Data Set: https://archive.ics.uci.edu/m
 **native-country**: United-States, Cambodia, England, Puerto-Rico, Canada, Germany, 
                   Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran,                       Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal,                         Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia,                      Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador,                       Trinadad&Tobago, Peru, Hong, Holand-Netherlands.</font>
 
-## What is the capital gain based on age?  
+## 1. What is the capital gain based on age?  
 
 ```{r}
-y = df$capital.gain
-x = df$age
-plot(x, y, pch=16, xlab='age', ylab='capital', main='Age vs Capital')
+education  <- adultData %>% count(education)
+
+Levels <-c("Bachelors", "Some-college", "11th", "HS-grad", "Prof-school", "Assoc-acdm", "Assoc-voc", "9th", 
+            "7th-8th", "12th", "Masters", "1st-4th", "10th", "Doctorate", "5th-6th", "Preschool")
+Count <- c(education$n)
+
+genres_plot <- data.frame(education)
+ggplot(genres_plot, aes(x=Levels, y=Count, fill=Levels)) + 
+geom_bar(stat="identity")
+
 ```
 
-## Slide with Plot
+## 2. Does the workclass affect if the individual make above or below 50k a year
 
-```{r pressure}
-
+```{r}
 
 ```
+
+## 3. Hours per week vs above or below 50k a year (boxplot)
+
+```{r}
+
+```
+
+## 4. Does making above or below 50k have an impact on marital status?
+
+```{r}
+
+```
+
+## 4. Does gender have an effect on wages?
+
+```{r}
+
+```
+
+## 6. Does the hours per week affect relationship and marital status?
+
+```{r}
+
+```
+
+## 7. Does occupation and education affect wage?
+
+```{r}
+
+```
+
 
 ## Embed html webpage
 
