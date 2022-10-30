@@ -80,7 +80,8 @@ geom_bar(stat="identity")
 ## 3. Hours per week vs above or below 50k a year (boxplot)
 
 ```{r}
-
+boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`, main = "Hours Per Week versus Wage", xlab = "Wage", ylab = "Hours Worked per Week", col = c("cornflowerblue", "darkolivegreen3"))
+legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("cornflowerblue", "darkolivegreen3"))
 ```
 
 ## 4. Does making above or below 50k have an impact on marital status?
@@ -104,7 +105,7 @@ geom_bar(stat="identity")
 ## 7. Does occupation and education affect wage?
 
 ```{r}
-boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`)
+
 ```
 
 
