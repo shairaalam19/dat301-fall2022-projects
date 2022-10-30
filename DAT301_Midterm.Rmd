@@ -91,14 +91,15 @@ Count <- c(class$n)
 
 ```{r}
 Hours <- adultData$hours.per.week
-boxplot(Hours~adultData$wage_below_orAbove_50k,horizontal=TRUE, col=c("green", "blue"), main="Hours Per Week based on Wage")
+boxplot(Hours~adultData$wage_below_orAbove_50k,horizontal=TRUE, col=c("green", "blue"), main="Hours Per Week based on Wage", xlab = "Wage", ylab = "Hours Worked per Week")
+legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("green", "blue"))
 
 ```
 
 ```{r}
 # REPEAT 
-boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`, main = "Hours Per Week vs. Wage", xlab = "Wage", ylab = "Hours Worked per Week", col = c("cornflowerblue", "darkolivegreen3"))
-legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("cornflowerblue", "darkolivegreen3"))
+#boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`, main = "Hours Per Week vs. Wage", xlab = "Wage", ylab = "Hours Worked per Week", col = #c("cornflowerblue", "darkolivegreen3"))
+#legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("cornflowerblue", "darkolivegreen3"))
 ```
 
 ## 4. Does making above or below 50k have an impact on marital status?
