@@ -18,9 +18,12 @@ adultData <- data.frame(df)
 UCI's Machine Learning Repository, Adult Data Set: https://archive.ics.uci.edu/ml/datasets/Adult
 
 - Predicts if income is above or below $50,000 based on census data.
-- Also known as "Census Income" dataset
 - Extraction was done by Barry Becker taken from 1994 Census database
 
+```{r,out.width='350px',out.height='225px',echo=FALSE,fig.align='center'}
+
+knitr::include_graphics('./male-female-money.png')
+```
 
 ## Categories of Adult Income Data
 
