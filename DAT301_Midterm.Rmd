@@ -104,7 +104,7 @@ geom_bar(stat="identity")
 ## 7. Does occupation and education affect wage?
 
 ```{r}
-boxplot(df$hours-per-week~df$wage_below_orAbove_50k)
+boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`)
 ```
 
 
