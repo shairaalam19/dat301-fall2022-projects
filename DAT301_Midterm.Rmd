@@ -80,7 +80,7 @@ geom_bar(stat="identity")
 ## 3. Hours per week vs above or below 50k a year
 
 ```{r}
-boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`, main = "Hours Per Week versus Wage", xlab = "Wage", ylab = "Hours Worked per Week", col = c("cornflowerblue", "darkolivegreen3"))
+boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`, main = "Hours Per Week vs. Wage", xlab = "Wage", ylab = "Hours Worked per Week", col = c("cornflowerblue", "darkolivegreen3"))
 legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("cornflowerblue", "darkolivegreen3"))
 ```
 
