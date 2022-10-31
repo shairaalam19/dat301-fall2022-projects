@@ -1,6 +1,6 @@
 ---
 title: "DAT301 Midterm Project"
-author: "Amber Kahklen, Shaira Alam, Alyssa Stefencavage"
+author: "Amber Kahklen, Shaira Alam (salam13, 1216475247), Alyssa Stefencavage"
 output: ioslides_presentation
 ---
 
@@ -14,7 +14,6 @@ library(ggplot2)
 adultData <- data.frame(df)
 ```
 ## Income Prediction | Based on Census Data
-
 UCI's Machine Learning Repository, Adult Data Set: https://archive.ics.uci.edu/ml/datasets/Adult
 
 - Predicts if income is above or below $50,000 based on census data.
@@ -26,9 +25,7 @@ knitr::include_graphics('./male-female-money.png')
 ```
 
 ## Categories of Adult Income Data
-
 <font size = "3">**age**: continuous.
-
 **workclass**: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov,    Without-pay, Never-worked.
             
 **fnlwgt**: continuous.
@@ -51,9 +48,7 @@ knitr::include_graphics('./male-female-money.png')
 **sex**: Female, Male.</font>
 
 ## Categories of Adult Income Data Continued
-
 <font size = "3">
-
 **capital-gain**: continuous
 
 **capital-loss**: continuous
@@ -64,7 +59,6 @@ knitr::include_graphics('./male-female-money.png')
                   Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran,                       Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal,                         Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia,                      Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador,                       Trinadad&Tobago, Peru, Hong, Holand-Netherlands.</font>
 
 ## Attribute Details
-
 **fnlwgt**: 
 
 The number of people one row represents
@@ -75,9 +69,7 @@ Married-civ-spouse: Married to a civilian
 
 Married-AF-spouse: Married to someone in the Armed Forces
 
-
 ## Motivation
-
 Help us in our own careers.
 
 See historically what attributes people have to increase wage.
@@ -91,13 +83,12 @@ knitr::include_graphics('./family.png')
 ```
 
 ## Challenges
-
 Different characters in the name:
 Married-civ-spouse has a space in the front
 
 Some values are missing in rows
 
-## 1. Plot the count for each education level.  
+## 1. How many people are there for each education category?  
 
 ```{r}
 education  <- adultData %>% count(education)
@@ -112,7 +103,13 @@ geom_bar(stat="identity")
 
 ```
 
-## 2. Does the workclass affect if the individual make above or below 50k a year
+## Analysis 
+
+The lowest count is for people who had a completed doctorate degree. 
+
+The highest category was for grades 1st-4th - which makes sense for education levels where all individuals above the age of 5 will have at least a base level of educaiton. 
+
+## 2. Does the workclass affect if the individual make above or below 50k a year?
 
 ```{r}
 class <- adultData %>% count(workclass)
@@ -128,19 +125,19 @@ Count <- c(class$n)
 
 ## 3. Hours per week vs above or below 50k a year
 
-On Average, people that work over 40 hours a week have wages >50k
-
 ```{r,fig.height=4}
 Hours <- adultData$hours.per.week
 boxplot(Hours~adultData$wage_below_orAbove_50k,horizontal=TRUE, col=c("green", "blue"), main="Hours Per Week based on Wage", xlab = "Hours Worked per Week", ylab = "Wage")
 legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("green", "blue"))
-
 ```
 ```{r}
 # REPEAT 
 #boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`, main = "Hours Per Week vs. Wage", xlab = "Wage", ylab = "Hours Worked per Week", col = #c("cornflowerblue", "darkolivegreen3"))
 #legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("cornflowerblue", "darkolivegreen3"))
 ```
+## Analysis 
+
+On Average, people that work over 40 hours a week have wages >50k
 
 ## 4. Does making above or below 50k have an impact on marital status?
 
@@ -181,13 +178,8 @@ library(knitr)
 kable(m_s)
 
 ```
-Analysis:
 
-There largest group of people that make over 50k are married.
-
-The largest group of people that make under 50k have never been married.
-
-## Barplot for Question 4
+## Barplot 
 
 ```{r}
 par(mar = c(8, 4, 1, 1))
@@ -196,6 +188,12 @@ mtext("Marital Status", side=1, line = 6)
 legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("blue", "pink"))
 text(x = yy, y = m_s+700, label=as.character(m_s))
 ```
+
+## Analysis
+
+There largest group of people that make over 50k are married.
+
+The largest group of people that make under 50k have never been married.
 
 ## 5. Does gender have an effect on wages?
 
@@ -213,6 +211,14 @@ text(x = zz, y = wageMvW+1000, label=as.character(wageMvW))
 legend("topright", legend = c("Wage is Above 50K", "Wage is Below 50k"), fill = c("blue", "pink"))
 
 ```
+
+## Analysis 
+
+Of all men, 44% of the data has an income over $50,000. 
+
+In comparison, only 12.3% of women have an income over $50,000. 
+
+Based on population of data, this shows a significant discrepency on gender-pay ratios. 
 
 ## 6. Does the hours per week affect relationship and marital status?
 
@@ -233,7 +239,12 @@ xx <- barplot(hoursPerRelStatus, main = "Average Hours Worked per Week by Marita
 mtext("Marital Status", side=1, line = 6)
 text(x = xx, y = hoursPerRelStatusR+3, label=as.character(hoursPerRelStatusR))
 ```
-Analysis: Based off the bar graph, people married work the most hours
+
+## Analysis
+
+Based off the bar graph, people married work the most hours.
+
+Widowed individuals seem to have the lowest hours worked per week. This can be due a variety of reasons, most likely due to increased familial obligations. 
 
 ## 7. Does occupation and education affect wage?
 
@@ -249,3 +260,8 @@ boxplot(df$`hours-per-week`~df$occupation, mian = "Hours Worked per Week by Work
 mtext("Occupation", side=1, line = 8)
 ```
 
+## Analysis 
+
+Farming-fishing had the largest range in hours worked per week. 
+
+Most occupations had a mean that steadied around 40 hours/week. 
