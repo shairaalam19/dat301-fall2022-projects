@@ -1,10 +1,6 @@
 ---
 title: "DAT301 Midterm Project"
-<<<<<<< HEAD
 author: "Amber Kahklen, Shaira Alam (salam13, 1216475247), Alyssa Stefencavage"
-=======
-author: "Amber Kahklen 1216918261, Shaira Alam, Alyssa Stefencavage"
->>>>>>> 82005d70a2bd14c6be036ab324c2943cb420bc27
 output: ioslides_presentation
 ---
 
