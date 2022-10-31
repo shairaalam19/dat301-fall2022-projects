@@ -124,7 +124,7 @@ Count <- c(class$n)
 # geom_bar(stat="identity")
 ```
 
-## 3. Hours per week vs above or below 50k a year
+## 3. Hours per Week | Wage above or below 50k a year?
 
 On Average, people that work over 40 hours a week have wages >50k
 
@@ -140,7 +140,7 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 #legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("cornflowerblue", "darkolivegreen3"))
 ```
 
-## 4. Does making above or below 50k have an impact on marital status?
+## 4. Marital Status | Does making above or below 50k have an impact on marital status?
 
 ```{r}
 mcsg = length(df$`marital-Status`[df$`marital-Status` == " Married-civ-spouse" & 
@@ -195,7 +195,7 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 text(x = yy, y = m_s+700, label=as.character(m_s))
 ```
 
-## 5. Does gender have an effect on wages?
+## 5. Gender | Does gender have an effect on wages?
 
 ```{r}
 wageWomenG = length(df$sex[df$sex == " Female" & df$wage_below_orAbove_50k == " >50K"])
@@ -212,7 +212,7 @@ legend("topright", legend = c("Wage is Above 50K", "Wage is Below 50k"), fill = 
 
 ```
 
-## 6. Does the hours per week affect relationship and marital status?
+## 6. Hours per Week | Does the hours per week affect marital status?
 
 ```{r,fig.height=4}
 mcs = df$`hours-per-week`[df$`marital-Status` == " Married-civ-spouse"]
