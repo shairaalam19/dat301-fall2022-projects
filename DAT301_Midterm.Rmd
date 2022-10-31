@@ -101,15 +101,13 @@ Some values are missing in rows
 
 ```{r}
 education  <- adultData %>% count(education)
-
 Levels <- c("Bachelors", "Some-college", "11th", "HS-grad", "Prof-school", "Assoc-acdm", "Assoc-voc", "9th", 
             "7th-8th", "12th", "Masters", "1st-4th", "10th", "Doctorate", "5th-6th", "Preschool")
 Count <- c(education$n)
-
 education <- data.frame(education)
-ggplot(education, aes(x=Levels, y=Count, fill=Levels)) + 
+p <- ggplot(education, aes(x=Levels, y=Count, fill=Levels)) + 
 geom_bar(stat="identity")
-
+p + theme(axis.text.x = element_text(angle = 90))
 ```
 
 ## 2. Does the workclass affect if the individual make above or below 50k a year
