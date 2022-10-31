@@ -130,7 +130,7 @@ Count <- c(class$n)
 
 ```{r}
 Hours <- adultData$hours.per.week
-boxplot(Hours~adultData$wage_below_orAbove_50k,horizontal=TRUE, col=c("green", "blue"), main="Hours Per Week based on Wage", xlab = "Wage", ylab = "Hours Worked per Week")
+boxplot(Hours~adultData$wage_below_orAbove_50k,horizontal=TRUE, col=c("green", "blue"), main="Hours Per Week based on Wage", xlab = "Hours Worked per Week", ylab = "Wage")
 legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("green", "blue"))
 
 ```
