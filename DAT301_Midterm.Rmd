@@ -275,7 +275,7 @@ par(mar = c(8, 4, 1, 1))
 aa <- barplot(edu, main = "Education's Influence on Wage", xlab = "", ylab = "Number of People", ylim = c(0, 10000), col = c("pink", "purple"), names.arg = c("Bachelors", "Some-college", "11th", "HS-grad", "Prof-school", "Assoc-acdm", "Assoc-voc", "9th", "7th-8th", "12th", "Masters", "1st-4th", "10th", "Doctorate", "5th-6th", "Preschool"), beside = TRUE, las = 2)
 legend("topright", legend = c("Wage is Above 50K", "Wage is Below 50k"), fill = c("pink", "purple"))
 mtext("Education", side=1, line = 5)
-text(x = aa, y = edu+200, label=as.character(edu))
+text(x = aa, y = edu+200, label=as.character(edu), cex = 0.5)
 ```
 
 ## 8. Occupation | Hours per Week by Occupation
