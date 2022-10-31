@@ -147,7 +147,7 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 
 ```
 
-## 4. Does gender have an effect on wages?
+## 5. Does gender have an effect on wages?
 
 ```{r}
 
