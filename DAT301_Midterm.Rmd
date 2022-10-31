@@ -89,6 +89,12 @@ Married-civ-spouse has a space in the front
 
 Some values are missing in rows
 
+
+```{r,echo=FALSE,fig.align='center'}
+
+knitr::include_graphics('./dataimg.png')
+```
+
 ## 1. How many people are there for each education category?  
 
 ```{r}
