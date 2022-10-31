@@ -156,7 +156,23 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 ## 6. Does the hours per week affect relationship and marital status?
 
 ```{r}
+marital_s = recode_factor(df$`marital-Status`, " Married-civ-spouse" = 1, " Divorced" = 2, " Never-married" = 3, " Separated" = 4, " Widowed" = 5, " Married-spouse-absent" = 6, " Married-AF-spouse" = 7, .default = 8)
 
+mcs = df$`hours-per-week`[df$`marital-Status` == " Married-civ-spouse"]
+div = df$`hours-per-week`[df$`marital-Status` == " Divorced"]
+nm = df$`hours-per-week`[df$`marital-Status` == " Never-married"]
+sep = df$`hours-per-week`[df$`marital-Status` == " Separated"]
+wid = df$`hours-per-week`[df$`marital-Status` == " Widowed"]
+msa = df$`hours-per-week`[df$`marital-Status` == " Married-spouse-absent"]
+mas = df$`hours-per-week`[df$`marital-Status` == " Married-AF-spouse"]
+
+hoursPerRelStatus = c(mean(mcs), mean(div), mean(nm), mean(sep), mean(wid), mean(msa), mean(mas))
+hoursPerRelStatusR = round(hoursPerRelStatus, digits = 2)
+
+par(mar = c(8, 4, 5, 1))
+xx <- barplot(hoursPerRelStatus, main = "Average Hours Worked per Week by Marital Status", xlab = "", ylab = "Hours Worked in a Week", ylim = c(0, 50), names.arg = c("Married,\n Civilian Spouse", "Divorced", "Never Married", "Separated", "Widowed", "Married,\n Spouse Absent", "Married, Armed\n Forces Spouse"), las = 2, col = c("green", "red", "blue", "Pink", "Purple", "Yellow", "Orange"))
+mtext("Marital Status", side=1, line = 6)
+text(x = xx, y = hoursPerRelStatusR+3, label=as.character(hoursPerRelStatusR))
 ```
 
 ## 7. Does occupation and education affect wage?
