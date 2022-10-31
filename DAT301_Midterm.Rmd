@@ -144,7 +144,50 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 ## 4. Does making above or below 50k have an impact on marital status?
 
 ```{r}
+mcsg = length(df$`marital-Status`[df$`marital-Status` == " Married-civ-spouse" & 
+                             df$wage_below_orAbove_50k == " >50K"])
+mcsl = length(df$`marital-Status`[df$`marital-Status` == " Married-civ-spouse" & 
+                             df$wage_below_orAbove_50k == " <=50K"])
+divg = length(df$`marital-Status`[df$`marital-Status` == " Divorced" & 
+                             df$wage_below_orAbove_50k == " >50K"])
+divl = length(df$`marital-Status`[df$`marital-Status` == " Divorced" & 
+                             df$wage_below_orAbove_50k == " <=50K"])
+nmg = length(df$`marital-Status`[df$`marital-Status` == " Never-married"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+nml = length(df$`marital-Status`[df$`marital-Status` == " Never-married"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+sepg = length(df$`marital-Status`[df$`marital-Status` == " Separated"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+sepl = length(df$`marital-Status`[df$`marital-Status` == " Separated"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+widg = length(df$`marital-Status`[df$`marital-Status` == " Widowed"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+widl = length(df$`marital-Status`[df$`marital-Status` == " Widowed"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+msag = length(df$`marital-Status`[df$`marital-Status` == " Married-spouse-absent"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+msal = length(df$`marital-Status`[df$`marital-Status` == " Married-spouse-absent"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+masg = length(df$`marital-Status`[df$`marital-Status` == " Married-AF-spouse"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+masl = length(df$`marital-Status`[df$`marital-Status` == " Married-AF-spouse"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
 
+m_s <- as.table(rbind(c(mcsg, divg, nmg, sepg, widg, msag, masg), c(mcsl, divl, nml, sepl, widl, msal, masl)))
+dimnames(m_s) <- list(Wage = c(">50K", "<=50K"), Marital_Status = c("Married, Civilian Spouse", "Divorced", "Never Married", "Separated", "Widowed", "Married, Spouse Absent", "Married, Armed Forces Spouse"))
+library(knitr)
+
+kable(m_s)
+
+```
+
+## Barplot for Question 4
+
+```{r}
+par(mar = c(8, 4, 1, 1))
+yy <- barplot(m_s, ylim = c(0, 17000), main = "Wage per Marital Status", xlab = " ", ylab = "# of people", col = c("blue", "pink"), names.arg = c("Married,\n Civilian Spouse", "Divorced", "Never Married", "Separated", "Widowed", "Married,\n Spouse Absent", "Married, Armed\n Forces Spouse"), las = 3)
+mtext("Marital Status", side=1, line = 6)
+legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("blue", "pink"))
 ```
 
 ## 5. Does gender have an effect on wages?
