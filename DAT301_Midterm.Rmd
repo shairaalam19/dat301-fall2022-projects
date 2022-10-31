@@ -1,6 +1,10 @@
 ---
 title: "DAT301 Midterm Project"
+<<<<<<< HEAD
 author: "Amber Kahklen, Shaira Alam (salam13, 1216475247), Alyssa Stefencavage"
+=======
+author: "Amber Kahklen 1216918261, Shaira Alam, Alyssa Stefencavage"
+>>>>>>> 82005d70a2bd14c6be036ab324c2943cb420bc27
 output: ioslides_presentation
 ---
 
@@ -159,12 +163,7 @@ kable(m_s)
 
 ```
 
-<<<<<<< HEAD
 ## Barplot 
-=======
-## 3. Hours per Week | Wage above or below 50k a year?
->>>>>>> d76164a3a6ae58772447c048a56e867d261fd8f1
-
 ```{r}
 par(mar = c(8, 4, 1, 1))
 yy <- barplot(m_s, ylim = c(0, 20000), main = "Wage per Workclass", xlab = " ", ylab = "# of people", col = c("orange", "yellow"), names.arg = c("Private", "Self-emp-not-inc", "Self-emp-inc", "Federal-gov", "Local-gov", "State-gov", "Without-pay", "Never-worked"), las = 3, beside=TRUE)
@@ -181,7 +180,7 @@ The next category that leaned heavily with more people making more than $50,000 
 
 However, those who were self-employed and incorporated tended to make less than $50,000. 
 
-## 3. Hours per week vs above or below 50k a year
+## 3. Hours per Week | Wage above or below 50k a year?
 
 ```{r,fig.height=4}
 Hours <- adultData$hours.per.week
@@ -247,15 +246,12 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 text(x = yy, y = m_s+700, label=as.character(m_s))
 ```
 
-<<<<<<< HEAD
 ## Analysis
 
 There largest group of people that make over 50k are married.
 
 The largest group of people that make under 50k have never been married.
 
-## 5. Does gender have an effect on wages?
-=======
 ## 5. Gender | Does gender have an effect on wages?
 >>>>>>> d76164a3a6ae58772447c048a56e867d261fd8f1
 
@@ -274,7 +270,6 @@ legend("topright", legend = c("Wage is Above 50K", "Wage is Below 50k"), fill = 
 
 ```
 
-<<<<<<< HEAD
 ## Analysis 
 
 Of all men, 44% of the data has an income over $50,000. 
@@ -283,10 +278,7 @@ In comparison, only 12.3% of women have an income over $50,000.
 
 Based on population of data, this shows a significant discrepency on gender-pay ratios. 
 
-## 6. Does the hours per week affect relationship and marital status?
-=======
 ## 6. Hours per Week | Does the hours per week affect marital status?
->>>>>>> d76164a3a6ae58772447c048a56e867d261fd8f1
 
 ```{r,fig.height=4}
 mcs = df$`hours-per-week`[df$`marital-Status` == " Married-civ-spouse"]
