@@ -236,7 +236,46 @@ Analysis: Based off the bar graph, people married work the most hours
 ## 7. Does occupation and education affect wage?
 
 ```{r}
+baG = length(df$education[df$education == " Bachelors" & df$wage_below_orAbove_50k == " >50K"])
+baL = length(df$education[df$education == " Bachelors" & df$wage_below_orAbove_50k == " <=50K"])
+scG = length(df$education[df$education == " Some-college" & df$wage_below_orAbove_50k == " >50K"])
+scL = length(df$education[df$education == " Some-college" & df$wage_below_orAbove_50k == " <=50K"])
+eG = length(df$education[df$education == " 11th" & df$wage_below_orAbove_50k == " >50K"])
+eL = length(df$education[df$education == " 11th" & df$wage_below_orAbove_50k == " <=50K"])
+hsG = length(df$education[df$education == " HS-grad" & df$wage_below_orAbove_50k == " >50K"])
+hsL = length(df$education[df$education == " HS-grad" & df$wage_below_orAbove_50k == " <=50K"])
+psG = length(df$education[df$education == " Prof-school" & df$wage_below_orAbove_50k == " >50K"])
+psL = length(df$education[df$education == " Prof-school" & df$wage_below_orAbove_50k == " <=50K"])
+aaG = length(df$education[df$education == " Assoc-acdm" & df$wage_below_orAbove_50k == " >50K"])
+aaL = length(df$education[df$education == " Assoc-acdm" & df$wage_below_orAbove_50k == " <=50K"])
+avG = length(df$education[df$education == " Assoc-voc" & df$wage_below_orAbove_50k == " >50K"])
+avL = length(df$education[df$education == " Assoc-voc" & df$wage_below_orAbove_50k == " <=50K"])
+nineG = length(df$education[df$education == " 9th" & df$wage_below_orAbove_50k == " >50K"])
+nineL = length(df$education[df$education == " 9th" & df$wage_below_orAbove_50k == " <=50K"])
+sandeG = length(df$education[df$education == " 7th-8th" & df$wage_below_orAbove_50k == " >50K"])
+sandeL = length(df$education[df$education == " 7th-8th" & df$wage_below_orAbove_50k == " <=50K"])
+twG = length(df$education[df$education == " 12th" & df$wage_below_orAbove_50k == " >50K"])
+twL = length(df$education[df$education == " 12th" & df$wage_below_orAbove_50k == " <=50K"])
+maG = length(df$education[df$education == " Masters" & df$wage_below_orAbove_50k == " >50K"])
+maL = length(df$education[df$education == " Masters" & df$wage_below_orAbove_50k == " <=50K"])
+oneandfourG = length(df$education[df$education == " 1st-4th" & df$wage_below_orAbove_50k == " >50K"])
+oneandfourL = length(df$education[df$education == " 1st-4th" & df$wage_below_orAbove_50k == " <=50K"])
+tenG = length(df$education[df$education == " 10th" & df$wage_below_orAbove_50k == " >50K"])
+tenL = length(df$education[df$education == " 10th" & df$wage_below_orAbove_50k == " <=50K"])
+docG = length(df$education[df$education == " Doctorate" & df$wage_below_orAbove_50k == " >50K"])
+docL = length(df$education[df$education == " Doctorate" & df$wage_below_orAbove_50k == " <=50K"])
+ftsG = length(df$education[df$education == " 5th-6th" & df$wage_below_orAbove_50k == " >50K"])
+ftsL = length(df$education[df$education == " 5th-6th" & df$wage_below_orAbove_50k == " <=50K"])
+preG = length(df$education[df$education == " Preschool" & df$wage_below_orAbove_50k == " >50K"])
+preL = length(df$education[df$education == " Preschool" & df$wage_below_orAbove_50k == " <=50K"])
 
+edu <- as.table(rbind(c(baG, scG, eG, hsG, psG, aaG, avG, nineG, sandeG, twG, maG, oneandfourG, tenG, docG, ftsG, preG), c(baL, scL, eL, hsL, psL, aaL, avL, nineL, sandeL, twL, maL, oneandfourL, tenL, docL, ftsL, preL)))
+
+par(mar = c(8, 4, 1, 1))
+aa <- barplot(edu, main = "Education's Influence on Wage", xlab = "", ylab = "Number of People", ylim = c(0, 10000), col = c("pink", "purple"), names.arg = c("Bachelors", "Some-college", "11th", "HS-grad", "Prof-school", "Assoc-acdm", "Assoc-voc", "9th", "7th-8th", "12th", "Masters", "1st-4th", "10th", "Doctorate", "5th-6th", "Preschool"), beside = TRUE, las = 2)
+legend("topright", legend = c("Wage is Above 50K", "Wage is Below 50k"), fill = c("pink", "purple"))
+mtext("Education", side=1, line = 5)
+text(x = aa, y = edu+200, label=as.character(edu))
 ```
 
 ## 8. Occupation | Hours per Week by Occupation
