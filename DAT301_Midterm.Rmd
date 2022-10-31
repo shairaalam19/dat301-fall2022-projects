@@ -1,6 +1,6 @@
 ---
 title: "DAT301 Midterm Project"
-author: "Amber Kahklen (akahklen, 1216918261), Shaira Alam (salam13, 1216475247), Alyssa Stefencavage"
+author: "Amber Kahklen (akahklen, 1216918261), Shaira Alam (salam13, 1216475247), Alyssa Stefencavage (astefenc, 1213852690)"
 output: ioslides_presentation
 ---
 
@@ -26,6 +26,7 @@ knitr::include_graphics('./male-female-money.png')
 
 ## Categories of Adult Income Data
 <font size = "3">**age**: continuous.
+
 **workclass**: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov,    Without-pay, Never-worked.
             
 **fnlwgt**: continuous.
@@ -343,6 +344,12 @@ legend("topright", legend = c("Wage is Above 50K", "Wage is Below 50k"), fill = 
 mtext("Education", side=1, line = 5)
 text(x = aa, y = edu+200, label=as.character(edu), cex = 0.5)
 ```
+
+## Analysis
+
+Most people with Bachelor's degrees are making less than $50,000 a year while most people with Master's degrees are making more than $50,000 a year.
+
+Most High School graduates make less than $50,000 a year.
 
 ## 8. Occupation | Hours per Week by Occupation
 
