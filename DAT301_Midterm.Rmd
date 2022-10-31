@@ -63,6 +63,19 @@ knitr::include_graphics('./male-female-money.png')
 **native-country**: United-States, Cambodia, England, Puerto-Rico, Canada, Germany, 
                   Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran,                       Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal,                         Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia,                      Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador,                       Trinadad&Tobago, Peru, Hong, Holand-Netherlands.</font>
 
+## Attribute Details
+
+**fnlwgt**: 
+
+The number of people one row represents
+
+**marital-status**: 
+
+Married-civ-spouse: Married to a civilian
+
+Married-AF-spouse: Married to someone in the Armed Forces
+
+
 ## Motivation
 
 Help us in our own careers.
@@ -78,6 +91,11 @@ knitr::include_graphics('./family.png')
 ```
 
 ## Challenges
+
+Different characters in the name:
+Married-civ-spouse has a space in the front
+
+Some values are missing in rows
 
 ## 1. Plot the count for each education level.  
 
