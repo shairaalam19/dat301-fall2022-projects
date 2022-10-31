@@ -128,13 +128,14 @@ Count <- c(class$n)
 
 ## 3. Hours per week vs above or below 50k a year
 
-```{r}
+On Average, people that work over 40 hours a week have wages >50k
+
+```{r,fig.height=4}
 Hours <- adultData$hours.per.week
 boxplot(Hours~adultData$wage_below_orAbove_50k,horizontal=TRUE, col=c("green", "blue"), main="Hours Per Week based on Wage", xlab = "Hours Worked per Week", ylab = "Wage")
 legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("green", "blue"))
 
 ```
-
 ```{r}
 # REPEAT 
 #boxplot(df$`hours-per-week`~df$`wage_below_orAbove_50k`, main = "Hours Per Week vs. Wage", xlab = "Wage", ylab = "Hours Worked per Week", col = #c("cornflowerblue", "darkolivegreen3"))
@@ -180,6 +181,11 @@ library(knitr)
 kable(m_s)
 
 ```
+Analysis:
+
+There largest group of people that make over 50k are married.
+
+The largest group of people that make under 50k have never been married.
 
 ## Barplot for Question 4
 
@@ -199,7 +205,7 @@ text(x = yy, y = m_s+700, label=as.character(m_s))
 
 ## 6. Does the hours per week affect relationship and marital status?
 
-```{r}
+```{r,fig.height=4}
 mcs = df$`hours-per-week`[df$`marital-Status` == " Married-civ-spouse"]
 div = df$`hours-per-week`[df$`marital-Status` == " Divorced"]
 nm = df$`hours-per-week`[df$`marital-Status` == " Never-married"]
@@ -216,6 +222,7 @@ xx <- barplot(hoursPerRelStatus, main = "Average Hours Worked per Week by Marita
 mtext("Marital Status", side=1, line = 6)
 text(x = xx, y = hoursPerRelStatusR+3, label=as.character(hoursPerRelStatusR))
 ```
+Analysis: Based off the bar graph, people married work the most hours
 
 ## 7. Does occupation and education affect wage?
 
