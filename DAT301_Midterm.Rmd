@@ -108,7 +108,7 @@ The lowest count is for people who had a completed doctorate degree.
 
 The highest category was for grades 1st-4th - which makes sense for education levels where all individuals above the age of 5 will have at least a base level of educaiton. 
 
-## 2. Does the workclass affect if the individual make above or below 50k a year?
+## 2. Does the workclass affect if the individual make above or below $50,000 a year?
 
 ```{r}
 
@@ -177,7 +177,7 @@ The next category that leaned heavily with more people making more than $50,000 
 
 However, those who were self-employed and incorporated tended to make less than $50,000. 
 
-## 3. Hours per Week | Wage above or below 50k a year?
+## 3. Hours per Week | Wage above or below $50,000 a year?
 
 ```{r,fig.height=4}
 Hours <- adultData$hours.per.week
@@ -191,9 +191,9 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 ```
 ## Analysis 
 
-On Average, people that work over 40 hours a week have wages >50k
+On Average, people that work over 40 hours a week have wages greater than $50,000
 
-## 4. Marital Status | Does making above or below 50k have an impact on marital status?
+## 4. Marital Status | Does making above or below $50,000 have an impact on marital status?
 
 ```{r}
 mcsg = length(df$`marital-Status`[df$`marital-Status` == " Married-civ-spouse" & 
@@ -245,9 +245,9 @@ text(x = yy, y = m_s+700, label=as.character(m_s))
 
 ## Analysis
 
-There largest group of people that make over 50k are married.
+There largest group of people that make over $50,000 are married.
 
-The largest group of people that make under 50k have never been married.
+The largest group of people that make under $50,000 have never been married.
 
 ## 5. Gender | Does gender have an effect on wages?
 
@@ -364,3 +364,10 @@ mtext("Occupation", side=1, line = 8)
 Farming-fishing had the largest range in hours worked per week. 
 
 Most occupations had a mean that steadied around 40 hours/week. 
+
+## Conclusion
+
+- Education is important to increase pay
+- Working at a private organization may provide more pay
+- Having a family may impact how many hours someone can work a week
+
