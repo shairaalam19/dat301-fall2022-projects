@@ -112,16 +112,72 @@ The highest category was for grades 1st-4th - which makes sense for education le
 ## 2. Does the workclass affect if the individual make above or below 50k a year?
 
 ```{r}
-class <- adultData %>% count(workclass)
 
-Classes <- c("Private", "Self-emp-not-inc", "Self-emp-inc", "Federal-gov", "Local-gov", "State-gov","Without-pay", "Never-worked")
-Count <- c(class$n)
+mcsg = length(df$`workclass`[df$`workclass` == " Private" & 
+                             df$wage_below_orAbove_50k == " >50K"])
+mcsl = length(df$`workclass`[df$`workclass` == " Private" & 
+                             df$wage_below_orAbove_50k == " <=50K"])
 
-# DOES NOT WORK 
-# class <- data.frame(class)
-# ggplot(class, aes(x=Classes, y=Count, fill=Classes)) + 
-# geom_bar(stat="identity")
+divg = length(df$`workclass`[df$`workclass` == " Self-emp-not-inc" & 
+                             df$wage_below_orAbove_50k == " >50K"])
+divl = length(df$`workclass`[df$`workclass` == " Self-emp-not-inc" & 
+                             df$wage_below_orAbove_50k == " <=50K"])
+
+nmg = length(df$`workclass`[df$`workclass` == " Self-emp-inc"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+nml = length(df$`workclass`[df$`workclass` == " Self-emp-inc"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+
+sepg = length(df$`workclass`[df$`workclass` == " Federal-gov"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+sepl = length(df$`workclass`[df$`workclass` == " Federal-gov"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+
+widg = length(df$`workclass`[df$`workclass` == " Local-gov"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+widl = length(df$`workclass`[df$`workclass` == " Local-gov"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+
+msag = length(df$`workclass`[df$`workclass` == " State-gov"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+msal = length(df$`workclass`[df$`workclass` == " State-gov"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+
+masg = length(df$`workclass`[df$`workclass` == " Without-pay"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+masl = length(df$`workclass`[df$`workclass` == " Without-pay"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+
+nwg = length(df$`workclass`[df$`workclass` == " Never-worked"& 
+                             df$wage_below_orAbove_50k == " >50K"])
+nwl = length(df$`workclass`[df$`workclass` == " Never-worked"& 
+                             df$wage_below_orAbove_50k == " <=50K"])
+
+m_s <- as.table(rbind(c(mcsg, divg, nmg, sepg, widg, msag, masg, nwg), c(mcsl, divl, nml, sepl, widl, msal, masl, nwl)))
+dimnames(m_s) <- list(Wage = c(">50K", "<=50K"), Education = c("Private", "Self-emp-not-inc", "Self-emp-inc", "Federal-gov", "Local-gov", "State-gov", "Without-pay", "Never-worked"))
+library(knitr)
+
+kable(m_s)
+
 ```
+
+## Barplot 
+
+```{r}
+par(mar = c(8, 4, 1, 1))
+yy <- barplot(m_s, ylim = c(0, 20000), main = "Wage per Workclass", xlab = " ", ylab = "# of people", col = c("orange", "yellow"), names.arg = c("Private", "Self-emp-not-inc", "Self-emp-inc", "Federal-gov", "Local-gov", "State-gov", "Without-pay", "Never-worked"), las = 3, beside=TRUE)
+mtext("Workclass", side=1, line = 6)
+legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = c("orange", "yellow"))
+text(x = yy, y = m_s+700, label=as.character(m_s))
+```
+
+## Analysis 
+
+Most individuals in private made over $50,000. 
+
+The next category that leaned heavily with more people making more than $50,000 were those in self-employed not-incorporated. 
+
+However, those who were self-employed and incorporated tended to make less than $50,000. 
 
 ## 3. Hours per week vs above or below 50k a year
 
