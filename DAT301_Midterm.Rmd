@@ -200,6 +200,17 @@ text(x = yy, y = m_s+700, label=as.character(m_s))
 ## 5. Does gender have an effect on wages?
 
 ```{r}
+wageWomenG = length(df$sex[df$sex == " Female" & df$wage_below_orAbove_50k == " >50K"])
+wageWomenL = length(df$sex[df$sex == " Female" & df$wage_below_orAbove_50k == " <=50K"])
+wageMenG = length(df$sex[df$sex == " Male" & df$wage_below_orAbove_50k == " >50K"])
+wageMenL = length(df$sex[df$sex == " Male" & df$wage_below_orAbove_50k == " <=50K"])
+
+wageMvW <- as.table(rbind(c(wageWomenG, wageMenG), c(wageWomenL, wageMenL)))
+dimnames(wageMvW) <- list(Wage = c(">50K", "<=50K"), Sex = c("Female", "Men"))
+
+zz <- barplot(wageMvW, main = "Wage based on Gender", xlab = "Gender", ylab = "Number of People", ylim = c(0, 25000), beside = TRUE, col = c("blue", "pink"))
+text(x = zz, y = wageMvW+1000, label=as.character(wageMvW))
+legend("topright", legend = c("Wage is Above 50K", "Wage is Below 50k"), fill = c("blue", "pink"))
 
 ```
 
