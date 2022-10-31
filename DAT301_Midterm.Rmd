@@ -249,7 +249,6 @@ There largest group of people that make over 50k are married.
 The largest group of people that make under 50k have never been married.
 
 ## 5. Gender | Does gender have an effect on wages?
->>>>>>> d76164a3a6ae58772447c048a56e867d261fd8f1
 
 ```{r}
 wageWomenG = length(df$sex[df$sex == " Female" & df$wage_below_orAbove_50k == " >50K"])
