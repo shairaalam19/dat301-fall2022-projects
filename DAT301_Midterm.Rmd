@@ -225,10 +225,9 @@ text(x = xx, y = hoursPerRelStatusR+3, label=as.character(hoursPerRelStatusR))
 ## 8. Occupation | Hours per Week by Occupation
 
 ```{r}
-occ = recode_factor(df$occupation, 'Tech-support' = "0", 'Craft-repair' = "1", 'Other-service' = "2", 'Sales' = "3", 'Exec-managerial' = "4", 'Prof-specialty' = "5", 'Handlers-cleaners' = "6", 'Machine-op-inspct' = "7", 'Adm-clerical' = "8", 'Farming-fishing' = "9", 'Transport-moving' = "10", 'Priv-house-serv' = "11", 'Protective-serv' = "12", 'Armed-Forces' = "13" )
-
-boxplot(df$`hours-per-week`~occ, mian = "Hours Worked per Week by Workclass", xlab = " ", ylab = "Hours Worked per Week", las = 3)
-
+par(mar = c(10, 4, 1, 1))
+boxplot(df$`hours-per-week`~df$occupation, mian = "Hours Worked per Week by Workclass", xlab = " ", ylab = "Hours Worked per Week", col = "darkolivegreen3", names = c("Not Given", "Adm-clerical", "Armed-Forces", "Craft\nrepair", "Exec-managerial", "Farming-fishing", "Handlers-cleaners", "Machine-op-inspct", "Other\nservice", "Priv-house-serv", "Prof-specialty", "Protective-serv", "Sales", "Tech\nsupport", "Transport-moving"), las = 2)
+mtext("Occupation", side=1, line = 8)
 ```
 
 ## Embed html webpage
