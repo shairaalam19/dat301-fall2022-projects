@@ -230,8 +230,3 @@ boxplot(df$`hours-per-week`~df$occupation, mian = "Hours Worked per Week by Work
 mtext("Occupation", side=1, line = 8)
 ```
 
-## Embed html webpage
-
-Taken from Johns Hopkins University website: [https://coronavirus.jhu.edu/map.html](https://coronavirus.jhu.edu/map.html)
-
-<iframe src="https://coronavirus.jhu.edu/map.html"></iframe>
