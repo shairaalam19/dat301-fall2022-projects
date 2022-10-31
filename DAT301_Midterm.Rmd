@@ -233,7 +233,7 @@ text(x = xx, y = hoursPerRelStatusR+3, label=as.character(hoursPerRelStatusR))
 ```
 Analysis: Based off the bar graph, people married work the most hours
 
-## 7. Does occupation and education affect wage?
+## 7. Education | Does education affect wage?
 
 ```{r}
 baG = length(df$education[df$education == " Bachelors" & df$wage_below_orAbove_50k == " >50K"])
