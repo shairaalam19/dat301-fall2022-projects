@@ -156,8 +156,6 @@ legend("topright", legend = c("Wage is Below 50k", "Wage is Above 50K"), fill = 
 ## 6. Does the hours per week affect relationship and marital status?
 
 ```{r}
-marital_s = recode_factor(df$`marital-Status`, " Married-civ-spouse" = 1, " Divorced" = 2, " Never-married" = 3, " Separated" = 4, " Widowed" = 5, " Married-spouse-absent" = 6, " Married-AF-spouse" = 7, .default = 8)
-
 mcs = df$`hours-per-week`[df$`marital-Status` == " Married-civ-spouse"]
 div = df$`hours-per-week`[df$`marital-Status` == " Divorced"]
 nm = df$`hours-per-week`[df$`marital-Status` == " Never-married"]
